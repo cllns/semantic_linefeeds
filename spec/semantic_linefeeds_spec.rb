@@ -63,4 +63,13 @@ describe SemanticLinefeeds do
       "This is because tautology."
     )
   end
+
+  it "splits on semi-colon" do
+    expect(SemanticLinefeeds.convert(
+      "One complete idea; another related one."
+    )).to eq_lines(
+      "One complete idea;",
+      "another related one."
+    )
+  end
 end
