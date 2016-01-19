@@ -4,6 +4,8 @@ module SemanticLinefeeds
   SPLIT_ON = %w[
     ,
     .
+    ...
+    …
   ]
 
   def self.convert(text)

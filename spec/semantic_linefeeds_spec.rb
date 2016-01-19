@@ -22,4 +22,22 @@ describe SemanticLinefeeds do
       "Everything."
     )
   end
+
+  it "splits on pseudo-ellipsis" do
+    expect(SemanticLinefeeds.convert(
+      "Wait... What?"
+    )).to eq(
+      "Wait...\n"\
+      "What?"
+    )
+  end
+
+  it "splits on ellipsis" do
+    expect(SemanticLinefeeds.convert(
+      "Wait… What?"
+    )).to eq(
+      "Wait…\n"\
+      "What?"
+    )
+  end
 end
