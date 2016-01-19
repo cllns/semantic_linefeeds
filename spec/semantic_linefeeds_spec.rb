@@ -54,4 +54,13 @@ describe SemanticLinefeeds do
       "Where?"
     )
   end
+
+  it "splits on colon" do
+    expect(SemanticLinefeeds.convert(
+      "An explanation: This is because tautology."
+    )).to eq_lines(
+      "An explanation:",
+      "This is because tautology."
+    )
+  end
 end
