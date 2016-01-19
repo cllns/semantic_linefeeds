@@ -5,11 +5,15 @@ describe SemanticLinefeeds do
     expect(SemanticLinefeeds::VERSION).not_to be nil
   end
 
+  def eq_lines(*lines)
+    eq(lines.join("\n"))
+  end
+
   it "splits on commas" do
     expect(SemanticLinefeeds.convert(
       "Sometimes, I want to go out for a walk."
-    )).to eq(
-      "Sometimes,\n"\
+    )).to eq_lines(
+      "Sometimes,",
       "I want to go out for a walk."
     )
   end
@@ -17,8 +21,8 @@ describe SemanticLinefeeds do
   it "splits on periods" do
     expect(SemanticLinefeeds.convert(
       "I will be okay. Everything."
-    )).to eq(
-      "I will be okay.\n"\
+    )).to eq_lines(
+      "I will be okay.",
       "Everything."
     )
   end
@@ -26,8 +30,8 @@ describe SemanticLinefeeds do
   it "splits on pseudo-ellipsis" do
     expect(SemanticLinefeeds.convert(
       "Wait... What?"
-    )).to eq(
-      "Wait...\n"\
+    )).to eq_lines(
+      "Wait...",
       "What?"
     )
   end
@@ -35,8 +39,8 @@ describe SemanticLinefeeds do
   it "splits on ellipsis" do
     expect(SemanticLinefeeds.convert(
       "Wait… What?"
-    )).to eq(
-      "Wait…\n"\
+    )).to eq_lines(
+      "Wait…",
       "What?"
     )
   end
@@ -44,9 +48,9 @@ describe SemanticLinefeeds do
   it "splits on question mark" do
     expect(SemanticLinefeeds.convert(
       "Who? What? Where?"
-    )).to eq(
-      "Who?\n"\
-      "What?\n"\
+    )).to eq_lines(
+      "Who?",
+      "What?",
       "Where?"
     )
   end
