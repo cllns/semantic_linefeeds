@@ -40,4 +40,14 @@ describe SemanticLinefeeds do
       "What?"
     )
   end
+
+  it "splits on question mark" do
+    expect(SemanticLinefeeds.convert(
+      "Who? What? Where?"
+    )).to eq(
+      "Who?\n"\
+      "What?\n"\
+      "Where?"
+    )
+  end
 end

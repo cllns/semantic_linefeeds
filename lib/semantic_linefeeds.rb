@@ -6,6 +6,7 @@ module SemanticLinefeeds
     .
     ...
     …
+    ?
   ]
 
   def self.convert(text)
