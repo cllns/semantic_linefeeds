@@ -72,4 +72,13 @@ describe SemanticLinefeeds do
       "another related one."
     )
   end
+
+  it "splits on left parenthesis" do
+    expect(SemanticLinefeeds.convert(
+      "From Time (Featuring Jhené Aiko)"
+    )).to eq_lines(
+      "From Time",
+      "(Featuring Jhené Aiko)"
+    )
+  end
 end

@@ -1,7 +1,7 @@
 require "semantic_linefeeds/version"
 
 module SemanticLinefeeds
-  SPLIT_ON = %w[
+  SPLIT_AFTER = %w[
     ,
     .
     ...
@@ -11,8 +11,16 @@ module SemanticLinefeeds
     ;
   ]
 
+  SPLIT_BEFORE = %w[
+    (
+  ]
+
   def self.convert(text)
-    SPLIT_ON.each do |splitter|
+    SPLIT_BEFORE.each do |splitter|
+      text = text.split(" #{splitter}").join("\n#{splitter}")
+    end
+
+    SPLIT_AFTER.each do |splitter|
       text = text.split("#{splitter} ").join("#{splitter}\n")
     end
 
