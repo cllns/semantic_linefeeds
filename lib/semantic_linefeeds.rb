@@ -13,6 +13,7 @@ module SemanticLinefeeds
 
   SPLIT_BEFORE = %w[
     (
+    \[
   ]
 
   def self.convert(text)

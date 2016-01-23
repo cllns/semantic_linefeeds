@@ -84,5 +84,14 @@ describe SemanticLinefeeds do
         "(Featuring Jhené Aiko)"
       )
     end
+
+    it "splits on left bracket" do
+      expect(SemanticLinefeeds.convert(
+        "From Time [Featuring Jhené Aiko]"
+      )).to eq_lines(
+        "From Time",
+        "[Featuring Jhené Aiko]"
+      )
+    end
   end
 end
