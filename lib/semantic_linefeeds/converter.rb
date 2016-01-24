@@ -14,6 +14,7 @@ module SemanticLinefeeds
     SPLIT_BEFORE = %w[
       (
       \[
+      http
     ]
 
     def self.run(text)

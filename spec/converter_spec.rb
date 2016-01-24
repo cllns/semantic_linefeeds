@@ -104,6 +104,27 @@ module SemanticLinefeeds
           "[Featuring Jhené Aiko]"
         )
       end
+
+      describe "splitting for links" do
+        it "splits on http://" do
+          expect(Converter.run(
+            "See an example at http://example.com"
+          )).to eq_lines(
+            "See an example at",
+            "http://example.com"
+          )
+        end
+
+        it "splits on https://" do
+          expect(Converter.run(
+            "See a secure example at https://example.com"
+          )).to eq_lines(
+            "See a secure example at",
+            "https://example.com"
+          )
+        end
+      end
+
     end
   end
 end
