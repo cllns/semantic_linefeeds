@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby
+require "semantic_linefeeds/cli"
+
+SemanticLinefeeds::CLI.new(ARGV)
