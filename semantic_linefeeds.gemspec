@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["sean@cllns.com"]
 
   spec.summary       = "Convert text to semantic linefeeds"
-  spec.homepage      = "https://github.com/clln/semantic_linefeeds"
+  spec.homepage      = "https://github.com/cllns/semantic_linefeeds"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org by setting 'allowed_push_host', or
