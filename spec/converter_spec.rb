@@ -75,6 +75,15 @@ module SemanticLinefeeds
           "another related one."
         )
       end
+
+      it "splits on exclamation point" do
+        expect(Converter.run(
+          "Oh my gosh! I am so excited!"
+        )).to eq_lines(
+          "Oh my gosh!",
+          "I am so excited!"
+        )
+      end
     end
 
     describe "splitting before" do
