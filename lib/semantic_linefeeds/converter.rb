@@ -10,6 +10,7 @@ module SemanticLinefeeds
       ;
       !
       )
+      \]
     ]
 
     SPLIT_BEFORE = %w[

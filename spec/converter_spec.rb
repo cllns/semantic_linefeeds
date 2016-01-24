@@ -94,6 +94,16 @@ module SemanticLinefeeds
           "parenthetical"
         )
       end
+
+      it "splits on right square bracket" do
+        expect(Converter.run(
+          "It is [quite] parenthetical"
+        )).to eq_lines(
+          "It is",
+          "[quite]",
+          "parenthetical"
+        )
+      end
     end
 
     describe "splitting before" do
@@ -106,7 +116,7 @@ module SemanticLinefeeds
         )
       end
 
-      it "splits on left bracket" do
+      it "splits on left square bracket" do
         expect(Converter.run(
           "From Time [Featuring Jhené Aiko]"
         )).to eq_lines(
