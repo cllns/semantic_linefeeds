@@ -84,6 +84,16 @@ module SemanticLinefeeds
           "I am so excited!"
         )
       end
+
+      it "splits on right parenthesis" do
+        expect(Converter.run(
+          "It is (very) parenthetical"
+        )).to eq_lines(
+          "It is",
+          "(very)",
+          "parenthetical"
+        )
+      end
     end
 
     describe "splitting before" do
@@ -123,8 +133,18 @@ module SemanticLinefeeds
             "https://example.com"
           )
         end
-      end
 
+        it "splits markdown links" do
+          # This happens implicity, via other rules (like `[` and `)` )
+          expect(Converter.run(
+            "See [an example](http://example.com) on our site"
+          )).to eq_lines(
+            "See",
+            "[an example](http://example.com)",
+            "on our site"
+          )
+        end
+      end
     end
   end
 end
