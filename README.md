@@ -107,9 +107,9 @@ in case of errors.
 
 ## TODO:
 
-[ ] - Add words to break on ('or, 'and', 'then')
-[ ] - Allow user defined words to break on, probably via a YAML config file
-[ ] - Allow writing results to a file, rather than only to STDOUT.
+- [ ] Add words to break on ('or, 'and', 'then')
+- [ ] Allow user defined words to break on, probably via a YAML config file
+- [ ] Allow writing results to a file, rather than only to STDOUT.
 
 ## Development
 
