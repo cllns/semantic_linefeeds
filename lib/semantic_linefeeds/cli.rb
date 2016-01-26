@@ -1,5 +1,3 @@
-require "semantic_linefeeds/converter"
-
 module SemanticLinefeeds
   class CLI
     def initialize(args)
