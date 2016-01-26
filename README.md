@@ -3,7 +3,8 @@
 This is a simple tool to convert text into
 [semantic linefeeds](http://rhodesmill.org/brandon/2012/one-sentence-per-line/).
 
-Rather than having a paragraph formatted as such:
+Rather than having formatting paragraphs to fit an arbitrary line-length,
+like:
 ```
 First, when you do the purely mechanical operations of typing, type so
 subsequent editing will be easy. Start each sentence on a new line. Make lines
@@ -13,7 +14,7 @@ and adding, deleting and rearranging sentences, these precautions simplify any
 editing you have to do later.
 ```
 
-You can write your text like:
+You can add new-lines (er, linefeeds) after each clause and sentence.
 ```
 First,
 when you do the purely mechanical operations of typing,
@@ -29,13 +30,17 @@ these precautions simplify any editing you have to do later.
 ```
 
 This makes `diff`ing it show more information.
-If you're using a text-preprocessor like Markdown,
-this is terrific,
+If you're using Markdown this is terrific,
 since your source can be formatted independently
 of how you display it.
 
 Take a look at the Source of this `README.md` file
 for an example :)
+
+This is just a simple script that breaks lines on certain punctuation marks.
+We aim for the output to be good starting point
+to convert your text to semantic linefeeds,
+rather than attempt to do it automatically 100% correct.
 
 ## Installation
 
