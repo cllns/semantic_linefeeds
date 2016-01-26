@@ -14,7 +14,7 @@ module SemanticLinefeeds
     describe "splitting after" do
       it "splits on commas" do
         expect(Converter.run(
-          "Sometimes, I want to go out for a walk."
+                 "Sometimes, I want to go out for a walk."
         )).to eq_lines(
           "Sometimes,",
           "I want to go out for a walk."
@@ -23,7 +23,7 @@ module SemanticLinefeeds
 
       it "splits on periods" do
         expect(Converter.run(
-          "I will be okay. Everything."
+                 "I will be okay. Everything."
         )).to eq_lines(
           "I will be okay.",
           "Everything."
@@ -32,7 +32,7 @@ module SemanticLinefeeds
 
       it "splits on pseudo-ellipsis" do
         expect(Converter.run(
-          "Wait... What?"
+                 "Wait... What?"
         )).to eq_lines(
           "Wait...",
           "What?"
@@ -41,7 +41,7 @@ module SemanticLinefeeds
 
       it "splits on ellipsis" do
         expect(Converter.run(
-          "Wait… What?"
+                 "Wait… What?"
         )).to eq_lines(
           "Wait…",
           "What?"
@@ -50,7 +50,7 @@ module SemanticLinefeeds
 
       it "splits on question mark" do
         expect(Converter.run(
-          "Who? What? Where?"
+                 "Who? What? Where?"
         )).to eq_lines(
           "Who?",
           "What?",
@@ -60,7 +60,7 @@ module SemanticLinefeeds
 
       it "splits on colon" do
         expect(Converter.run(
-          "An explanation: This is because tautology."
+                 "An explanation: This is because tautology."
         )).to eq_lines(
           "An explanation:",
           "This is because tautology."
@@ -69,7 +69,7 @@ module SemanticLinefeeds
 
       it "splits on semi-colon" do
         expect(Converter.run(
-          "One complete idea; another related one."
+                 "One complete idea; another related one."
         )).to eq_lines(
           "One complete idea;",
           "another related one."
@@ -78,7 +78,7 @@ module SemanticLinefeeds
 
       it "splits on exclamation point" do
         expect(Converter.run(
-          "Oh my gosh! I am so excited!"
+                 "Oh my gosh! I am so excited!"
         )).to eq_lines(
           "Oh my gosh!",
           "I am so excited!"
@@ -87,7 +87,7 @@ module SemanticLinefeeds
 
       it "splits on right parenthesis" do
         expect(Converter.run(
-          "It is (very) parenthetical"
+                 "It is (very) parenthetical"
         )).to eq_lines(
           "It is",
           "(very)",
@@ -97,7 +97,7 @@ module SemanticLinefeeds
 
       it "splits on right square bracket" do
         expect(Converter.run(
-          "It is [quite] parenthetical"
+                 "It is [quite] parenthetical"
         )).to eq_lines(
           "It is",
           "[quite]",
@@ -109,7 +109,7 @@ module SemanticLinefeeds
     describe "splitting before" do
       it "splits on left parenthesis" do
         expect(Converter.run(
-          "From Time (Featuring Jhené Aiko)"
+                 "From Time (Featuring Jhené Aiko)"
         )).to eq_lines(
           "From Time",
           "(Featuring Jhené Aiko)"
@@ -118,7 +118,7 @@ module SemanticLinefeeds
 
       it "splits on left square bracket" do
         expect(Converter.run(
-          "From Time [Featuring Jhené Aiko]"
+                 "From Time [Featuring Jhené Aiko]"
         )).to eq_lines(
           "From Time",
           "[Featuring Jhené Aiko]"
@@ -128,7 +128,7 @@ module SemanticLinefeeds
       describe "splitting for links" do
         it "splits on http://" do
           expect(Converter.run(
-            "See an example at http://example.com"
+                   "See an example at http://example.com"
           )).to eq_lines(
             "See an example at",
             "http://example.com"
@@ -137,7 +137,7 @@ module SemanticLinefeeds
 
         it "splits on https://" do
           expect(Converter.run(
-            "See a secure example at https://example.com"
+                   "See a secure example at https://example.com"
           )).to eq_lines(
             "See a secure example at",
             "https://example.com"
@@ -147,7 +147,7 @@ module SemanticLinefeeds
         it "splits markdown links" do
           # This happens implicity, via other rules (like `[` and `)` )
           expect(Converter.run(
-            "See [an example](http://example.com) on our site"
+                   "See [an example](http://example.com) on our site"
           )).to eq_lines(
             "See",
             "[an example](http://example.com)",

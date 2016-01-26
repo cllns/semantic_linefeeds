@@ -11,13 +11,13 @@ module SemanticLinefeeds
       !
       )
       \]
-    ]
+    ].freeze
 
     SPLIT_BEFORE = %w[
       (
       \[
       http
-    ]
+    ].freeze
 
     def self.run(text)
       SPLIT_BEFORE.each do |splitter|
