@@ -182,6 +182,27 @@ module SemanticLinefeeds
           )
         end
       end
+
+      describe "splitting on both (before and after)" do
+        it "splits multiple times, for complex input" do
+          expect(Converter.run(
+                  "I will do this thing then I will do that thing. "\
+                  "Do you think, perhaps, that I should? "\
+                  "Oh! Here I go again... "\
+                  "Typing typing typing; always typing."
+          )).to eq_lines(
+            "I will do this thing",
+            "then I will do that thing.",
+            "Do you think,",
+            "perhaps,",
+            "that I should?",
+            "Oh!",
+            "Here I go again...",
+            "Typing typing typing;",
+            "always typing."
+          )
+        end
+      end
     end
   end
 end
