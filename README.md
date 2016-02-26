@@ -81,8 +81,10 @@ do you?
 ```
 
 ### File name example
-`echo "Hello, I like this gem. Do you?" > tmp.txt`
-`semantic-linefeeds tmp.txt`
+````
+echo "Hello, I like this gem. Do you?" > tmp.txt`
+semantic-linefeeds tmp.txt
+```
 
 will output:
 ```
@@ -93,12 +95,12 @@ do you?
 
 Note that output currently only goes to STDOUT.
 
-If you try to do something like
+If you try to do something like:
 ```
 semantic-linefeeds README.md > README.md
 ```
 You'll end up with a blank file,
-because the `>` clears the `README.md` file
+because the `>` clears the `README.md` file (for writing)
 before it can be read into memory.
 
 We assume you're using git,
