@@ -17,6 +17,9 @@ module SemanticLinefeeds
       (
       \[
       http
+      and
+      or
+      then
     ].freeze
 
     def self.run(text)

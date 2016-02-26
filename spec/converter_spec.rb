@@ -154,6 +154,33 @@ module SemanticLinefeeds
             "on our site"
           )
         end
+
+        it "splits on 'and'" do
+          expect(Converter.run(
+                  "I was going to do this and I was also going to do that."
+          )).to eq_lines(
+            "I was going to do this",
+            "and I was also going to do that."
+          )
+        end
+
+        it "splits on 'or'" do
+          expect(Converter.run(
+                  "I should either do this or maybe I should do that."
+          )).to eq_lines(
+            "I should either do this",
+            "or maybe I should do that."
+          )
+        end
+
+        it "splits on 'then'" do
+          expect(Converter.run(
+                  "I will do this thing then I will do that thing."
+          )).to eq_lines(
+            "I will do this thing",
+            "then I will do that thing."
+          )
+        end
       end
     end
   end
