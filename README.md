@@ -3,8 +3,7 @@
 This is a simple tool to convert text into
 [semantic linefeeds](http://rhodesmill.org/brandon/2012/one-sentence-per-line/).
 
-Rather than having formatting paragraphs to fit an arbitrary line-length,
-like:
+Rather than formatting paragraphs to fit an arbitrary line-length, like:
 ```
 First, when you do the purely mechanical operations of typing, type so
 subsequent editing will be easy. Start each sentence on a new line. Make lines
@@ -14,7 +13,7 @@ and adding, deleting and rearranging sentences, these precautions simplify any
 editing you have to do later.
 ```
 
-You can add new-lines (er, linefeeds) after each clause and sentence.
+You can add newlines (linefeeds) after each clause and sentence.
 ```
 First,
 when you do the purely mechanical operations of typing,
@@ -29,7 +28,7 @@ deleting and rearranging sentences,
 these precautions simplify any editing you have to do later.
 ```
 
-This makes `diff`ing it show more information.
+This makes a `diff` much more readable.
 If you're using Markdown this is terrific,
 since your source can be formatted independently
 of how you display it.
@@ -60,20 +59,20 @@ Or install it yourself as:
 
 ## Usage
 
-
-Once it's installed,
-you can run `semantic-linefeeds`.
+Once it is installed,
+you can run `semantic-linefeeds`.  
 **NOTE**: this executable uses a hyphen to separate the words,
 whereas the git repo and gem use an underscore.
 
-The executable accepts either a string,
-or a Filename.
+The executable accepts either a string or a Filename.
 
 ### String example
-`semantic-linefeeds Hello, I like this gem. Do you?`
+
+`´´sh
+semantic-linefeeds Hello, I like this gem. Do you?
+```
 
 will output:
-
 ```
 Hello,
 I like this gem.
@@ -81,7 +80,7 @@ do you?
 ```
 
 ### File name example
-````
+```sh
 echo "Hello, I like this gem. Do you?" > tmp.txt`
 semantic-linefeeds tmp.txt
 ```
@@ -103,8 +102,8 @@ You'll end up with a blank file,
 because the `>` clears the `README.md` file (for writing)
 before it can be read into memory.
 
-We assume you're using git,
-so the code doesn't store of a backup of the original file,
+We assume you are using version control,
+so the program does NOT store a backup of the original file,
 in case of errors.
 
 ## TODO:
