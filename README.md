@@ -68,8 +68,8 @@ The executable accepts either a string or a Filename.
 
 ### String example
 
-`´´sh
-semantic-linefeeds Hello, I like this gem. Do you?
+```shell
+$ semantic-linefeeds Hello, I like this gem. Do you?
 ```
 
 will output:
@@ -80,9 +80,9 @@ do you?
 ```
 
 ### File name example
-```sh
-echo "Hello, I like this gem. Do you?" > tmp.txt`
-semantic-linefeeds tmp.txt
+```shell
+$ echo "Hello, I like this gem. Do you?" > tmp.txt
+$ semantic-linefeeds tmp.txt
 ```
 
 will output:
@@ -95,8 +95,8 @@ do you?
 Note that output currently only goes to STDOUT.
 
 If you try to do something like:
-```
-semantic-linefeeds README.md > README.md
+```shell
+$ semantic-linefeeds README.md > README.md
 ```
 You'll end up with a blank file,
 because the `>` clears the `README.md` file (for writing)
